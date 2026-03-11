@@ -4,9 +4,10 @@ import 'package:unipool/screens/auth_screen.dart';
 import 'package:unipool/screens/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(); // Initialize Firebase
+  await Firebase.initializeApp();
   runApp(const UnipoolApp());
 }
 
@@ -17,18 +18,26 @@ class UnipoolApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'UniPool',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.indigo,
         useMaterial3: true,
       ),
-      // Check if user is already logged in
-      home: StreamBuilder(
+      home: StreamBuilder<User?>(
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (ctx, snapshot) {
-          if (snapshot.hasData) {
-            return const HomeScreen(); // User is logged in
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Scaffold(
+              backgroundColor: Color(0xFF0F0C29),
+              body: Center(
+                child: CircularProgressIndicator(color: Color(0xFF6C63FF)),
+              ),
+            );
           }
-          return const AuthScreen(); // User needs to login
+          if (snapshot.hasData) {
+            return const HomeScreen();
+          }
+          return const AuthScreen();
         },
       ),
     );

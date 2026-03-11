@@ -1,26 +1,44 @@
 {
   "project_info": {
-    "project_number": "142144635414",
-    "project_id": "unipool-32b44",
-    "storage_bucket": "unipool-32b44.firebasestorage.app"
+    "project_number": "809697685014",
+    "project_id": "unipool-6077d",
+    "storage_bucket": "unipool-6077d.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:142144635414:android:46fd04fd04453003e0eb37",
+        "mobilesdk_app_id": "1:809697685014:android:aace8bb0624fd7682a8f37",
         "android_client_info": {
           "package_name": "com.example.unipool"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "809697685014-2lhhbk5nuienbugstf8mkdhfqrt8dl8b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.unipool",
+            "certificate_hash": "bfb094affd4791fb7f0a4a141645080d140bd87c"
+          }
+        },
+        {
+          "client_id": "809697685014-99n9i4i8fcehds7h1uosb59dtchjhcdg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyA-cL_OwDL1c4oUUzVPIknLkRiSSr991xQ"
+          "current_key": "AIzaSyD6XlDTaf-TLlYoQwiyFqJBL_vAAO3-VHw"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "809697685014-99n9i4i8fcehds7h1uosb59dtchjhcdg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
